@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'); // style for icons
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'); // style for icons 
 
 
 $primary: rgb(0, 255, 242);
@@ -63,10 +63,16 @@ label {
     margin-bottom: 20px;
 }
 
-.ng-valid[required], .ng-valid.required  {
-    border-left: 5px solid #42A948; /* green */
+div {
+    margin: 0em;
+    padding: 2em;
 }
   
-.ng-invalid:not(form)  {
-    border-left: 5px solid #a94442; /* red */
-}
+  #source {
+    color: blue;
+    border: 1px solid black;
+  }
+  
+  #target {
+    border: 1px solid black;
+  }
