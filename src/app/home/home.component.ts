@@ -9,7 +9,7 @@ import {ValidationService} from '../services/validation.service';
 export class HomeComponent implements OnInit {
 
   exercises: any;
-  results: any;
+  // results: any;
   brews: any;
 
   constructor(private http: ValidationService) { }
@@ -20,6 +20,13 @@ export class HomeComponent implements OnInit {
       console.log(this.exercises);
     }
     );
+
+    this.http.getBeer().subscribe(data => {
+      this.brews = data;
+      console.log(this.brews);
+    }
+    );
+
 
   }
 
