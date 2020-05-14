@@ -4,7 +4,7 @@
     <div class="col-md-6 offset-md-3 mt 8">
         <h3> Make a new routine</h3>
 
-        <form [formGroup] = "userForm" (ngSubmit)= "onSubmit()">
+        <form action = "server.js" action="POST" [formGroup] = "userForm" (ngSubmit)= "onSubmit()">
             <div class="form-group">
                 <label for="username">Username</label>
                 <input type="text"
