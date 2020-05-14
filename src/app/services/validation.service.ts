@@ -55,7 +55,7 @@ export class ValidationService {
 
   signup(user: User){
     const headers = new HttpHeaders({
-      confirmEmailUrl : this.confirmEmailUrl
+      // confirmEmailUrl : this.confirmEmailUrl
     });
     // tslint:disable-next-line:object-literal-shorthand
     const options = {headers: headers};

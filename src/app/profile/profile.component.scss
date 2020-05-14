@@ -11,6 +11,10 @@ body {
     font-size: 18px;
 }
 
+button{
+    float: right;
+}
+
 .container {
     width: 80%;
     margin: 0 auto;
@@ -35,6 +39,10 @@ header {
             list-style-type: none;
             margin: 0;
             display: flex;
+            
+            li{
+                border: 10px;
+            }
 
             li a {
                 padding: 1em;

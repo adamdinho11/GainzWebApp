@@ -11,6 +11,7 @@ import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthModule } from './auth/auth.module';
+import { RoutinesComponent } from './routines/routines.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { AuthModule } from './auth/auth.module';
     HomeComponent,
     ProfileComponent,
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    RoutinesComponent
   ],
   imports: [
     BrowserModule,

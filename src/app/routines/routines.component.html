@@ -1,0 +1,75 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<p>routines works!</p>
+<div class="row" novalidate>
+    <div class="col-md-6 offset-md-3 mt 8">
+        <h3> Make a new routine</h3>
+
+        <form [formGroup] = "userForm" (ngSubmit)= "onSubmit()">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text"
+                    formControlName ="username"
+                    class="form-control"
+                    id="username"
+                    placeholder="Enter Username">
+            </div>
+            <div class="form-group">
+                <label for="description">New Exercise</label>
+                <input type="text"
+                    formControlName ="description"
+                    class="form-control"
+                    id="description"
+                    placeholder="Briefly describe exercise">
+            </div>
+            <div class="form-group">
+                <label for="muscle_group">Muscle Group</label>
+                <input type="text"
+                    formControlName = "muscle_group"
+                    class="form-control"
+                    id="muscle_group"
+                    placeholder="Enter targeted muscle">
+            </div>
+            <div class="form-group">
+              <label for="reps"> Reps </label>
+              <input type="number"
+                formControlName = "reps"
+                class="form-control"
+                id="reps"
+                placeholder="Enter amount of reps">
+            </div>
+            <div class="form-group">
+                <label for="sets"> Sets </label>
+                <input type="number"
+                  formControlName = "sets"
+                  class="form-control"
+                  id="sets"
+                  placeholder="Enter amount of sets">
+            </div>
+            <div class="form-group">
+                <h3> Workout Guide Image</h3>
+                <label for="image"> Workout Preview</label>
+                <input type="file" accept="image/*" capture="user || environment"
+                    formControlName ="image"
+                    class="form-control"
+                    id="image"
+                    placeholder="Select or take a picture">
+            </div>
+
+            <div class="form-group">
+                <h3> Workout Guide Video</h3>
+                <label for="video"> Workout tutorial</label>
+                <input type="file" accept="video/*" capture
+                    formControlName ="video"
+                    class="form-control"
+                    id="video"
+                    placeholder="Select or take a video">
+            </div>
+
+                
+            <div class="form-group form-check">
+            </div>
+            <button type = "submit" 
+                 class="btn btn-primary"><i class="fa fa-sign-in"></i> Add Routine</button>
+          </form>
+    </div>
+</div>

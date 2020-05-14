@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ValidationService} from '../services/validation.service';
+import { RoutineService} from '../services/routines.service';
 
 
 @Component({
@@ -9,10 +10,19 @@ import {ValidationService} from '../services/validation.service';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor(private http: ValidationService) { }
+  exercises: any;
+
+
+  constructor(private http: ValidationService, private routines: RoutineService) { }
 
 
   ngOnInit() {
+
+    this.routines.displayRoutines().subscribe(data => {
+      this.exercises = data;
+      console.log(this.exercises);
+    }
+    );
   }
 
 }

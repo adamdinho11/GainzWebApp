@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators} from '@angular/forms';
 import { ValidationService } from '../services/validation.service';
+import { SignupService } from '../services/signup.service';
+
 
 @Component({
   selector: 'app-signup',
@@ -22,25 +24,27 @@ export class SignupComponent implements OnInit {
       validator: this.auth.passwordMatchValidator('password', 'confirmPassword')
   });
   ValidationService: any;
+  SignUpService: any;
 
   constructor(
     private fb: FormBuilder,
-    private auth: ValidationService
+    private auth: ValidationService,
+    private signUpService: SignupService,
   ) {}
 
   ngOnInit(): void{
   }
 
   onSubmit(){
-    const signupObserver = {
-      next: x => console.log('User successfully Created!'),
-      error: err => console.log(err)
-    };
-    this.ValidationService.signup(this.userForm).subscribe(
+    // const signupObserver = {
+    // //   next: x => console.log('User successfully Created!'),
+    // //   error: err => console.log(err)
+    // // };
+    this.SignUpService.signup(this.userForm).subscribe(
       data => console.log('Success!', data), error => console.error('Error!', error)
     );
-    this.auth.signup(this.userForm.value.subscribe(signupObserver));
-    console.log(this.userForm.value);
+    // this.auth.signup(this.userForm.value.subscribe(signupObserver));
+    // console.log(this.userForm.value);
   }
 
    // validator: this.customValidator.passwordMatchValidator("");

@@ -1,16 +1,31 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <h1>profile works!</h1>
-for
-<div>Take a picture
+<div>Add profile picture a picture
     <input type="file" accept="image/*" capture>
     <input type="file" accept="video/*" capture>
     <input type="file" accept="image/*" capture="user || environment">
+
+
+    <button onclick="window.location.href = '/routines';">Routines</button>
 </div>
 
 <br>
 
-<div id="target">You can drag an image file here</div>
+<h3> Your Routines!</h3>
+<ul *ngIf="exercises">
+    <li *ngFor= "let exercise of exercises">
+        <p class ="description">{{ exercise.description }}</p>
+        <p class ="muscle_group">{{ exercise.muscle_group }}</p>
+        <p class ="reps">{{ exercise.reps }}</p>
+        <p class ="sets">{{ exercise.sets }}</p>
+        <p class ="image">{{ exercise.image }}</p>
+        <p class ="video">{{ exercise.video }}</p>
+    </li>
+
+</ul>
+
+<!-- <div id="target">You can drag an image file here</div>
 <script>
   const target = document.getElementById('target');
 
@@ -34,4 +49,4 @@ for
       Select this element, drag it to the Drop Zone and then release the selection to move the element.
     </p>
   </div>
-  <div id="target" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">Drop Zone</div>
+  <div id="target" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">Drop Zone</div> -->

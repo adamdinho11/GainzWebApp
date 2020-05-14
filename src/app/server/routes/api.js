@@ -46,6 +46,7 @@ router.post('/routines', function(req, res){
     console.log('Post a video');
     var newRoutine = new routine();
     newRoutine.description = req.body.description;  // Need to create a form triggered by a button on the user profile
+    newRoutine.muscle_group = req.body.muscle_group;  // Need to create a form triggered by a button on the user profile
     newRoutine.reps = req.body.reps;                // to create the routines. 
     newRoutine.sets = req.body.sets;
     newRoutine.image = req.body.image;
@@ -85,7 +86,8 @@ router.put('/routine/:username', function(req, res){
     routines.findByUsernameAndUpdate(req.params.username,
         {
             $set: {description: req.body.description,  // Need to create a form triggered by a button on the user profile
-                    reps: req.body.reps,                 // to update the routines.
+                    muscle_group: req.body.muscle_group,                 // to update the routines.
+                    reps: req.body.reps,                
                     sets: req.body.sets,
                     image: req.body.image,
                     video: req.body.video}
