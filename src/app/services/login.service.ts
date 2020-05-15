@@ -25,7 +25,7 @@ import { LoginComponent } from '../login/login.component';
 export class LoginService {
 
   authUrl = 'http:'; // api url needed. The link from Postman/woman that has the token infomation
-  profileURL = 'http://localhost:3000/profile'; // api url needed. The link from Postman/woman that has the token infomation
+  profileURL = 'http://localhost:4200/profile'; // api url needed. The link from Postman/woman that has the token infomation
   dbURL = ''; // api url needed to POST the form data. The link to the database holding userinfo.
 
 

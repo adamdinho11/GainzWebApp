@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const users = require('../models/users');
 const routines = require('../models/routines');
 
+const router = express.Router();
 const db = 'mongodb://gainzadmin:gainz@gainz-akwil.mongodb.net/test?retryWrites=true&w=majority'; // mongoose db api link
 
 mongoose.Promise = global.Promise
@@ -12,6 +13,12 @@ mongoose.connect(db, function(err){
         console.error("Error!" + err);
     }
 });
+
+router.get('/', function(req, res){
+    res.send('api works');
+});
+
+module.exports = router;
 
 // GET ALL USER ROUTINE INFORMATION
 router.get('/routines', function(req, res){
@@ -43,8 +50,8 @@ router.get('/routines/:username', function(req, res){
 
 // Post or Create a new routine.
 router.post('/routines', function(req, res){
-    console.log('Post a video');
-    var newRoutine = new routine();
+    console.log('Post a routine');
+    var newRoutine = new routines();
     newRoutine.description = req.body.description;  // Need to create a form triggered by a button on the user profile
     newRoutine.muscle_group = req.body.muscle_group;  // Need to create a form triggered by a button on the user profile
     newRoutine.reps = req.body.reps;                // to create the routines. 
@@ -53,7 +60,7 @@ router.post('/routines', function(req, res){
     newRoutine.video = req.body.video;
     newRoutine.save(function(err, insertedRoutine){
         if(err){
-            console.log('Error saving video');
+            console.log('Error saving routine');
         } else{
             res.json(insertedRoutine);
         }
@@ -63,7 +70,7 @@ router.post('/routines', function(req, res){
 // Post or Create a new user.
 router.post('/users', function(req, res){
     console.log('Post a video');
-    var newUser = new user();
+    var newUser = new users();
     newUser.username = req.body.username;  // Need to create a form triggered by a button on the signup page
     newUser.email = req.body.email;                // to create the users. 
     newUser.password = req.body.password;
@@ -117,7 +124,3 @@ router.delete('routines/:username', function(req, res){
         }
     })
 })
-
-
-
-module.exports = router;

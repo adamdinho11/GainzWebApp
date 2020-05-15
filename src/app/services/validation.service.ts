@@ -63,7 +63,7 @@ export class ValidationService {
   }
 
   getExercises(){
-    return this.http.get('https://wger.de/api/v2/exercise/');
+    return this.http.get('https://wger.de/api/v2/exercise');
   }
 
   getBeer(){

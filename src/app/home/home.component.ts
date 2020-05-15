@@ -7,16 +7,22 @@ import {ValidationService} from '../services/validation.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
-  exercises: any;
-  // results: any;
-  brews: any;
+  // size = 1000;
+  // i = 0;
+  exercises;
+  brews;
 
   constructor(private http: ValidationService) { }
 
   ngOnInit() {
+    let results = [{
+      description: '',
+      license_author: '',
+      muscles: ''
+    }];
     this.http.getExercises().subscribe(data => {
       this.exercises = data;
+      results = this.exercises;
       console.log(this.exercises);
     }
     );
